@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from './finapse_logo.png';
 import './App.css';
 
 function App() {
@@ -11,11 +11,12 @@ function App() {
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://twitter.com/FintwitSynapse"
           target="_blank"
           rel="noopener noreferrer"
+          
         >
-          Learn React
+          more to follow...
         </a>
       </header>
     </div>
