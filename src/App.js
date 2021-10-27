@@ -1,4 +1,4 @@
-import logo from './finapse_logo.png';
+import logo from './20210714_195506.jpg';
 import './App.css';
 
 function App() {
