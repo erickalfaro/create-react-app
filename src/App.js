@@ -1,5 +1,6 @@
 import logo from './finapse_logo.png';
 import './App.css';
+import FirstComponent from './FirstComponent'
 
 function App() {
   return (
@@ -9,6 +10,9 @@ function App() {
         <p>
           <code>finapse.live</code>
         </p>
+
+        <FirstComponent displaytext="First Component Data"/>
+
         <a
           className="App-link"
           href="https://twitter.com/FintwitSynapse"
