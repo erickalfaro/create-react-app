@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import finapse_logo from './finapse_logo.png';
-import surprisePic from './surprise.jpg';
+//import surprisePic from './surprise.jpg';
 import './App.css';
 import DataTable from 'react-data-table-component';
 
@@ -65,28 +65,15 @@ const columns = [
 ];
 
 function App() {
-  const [playerName, setPlayerName] = useState([]);
-  const [playerPic, setPlayerPic] = useState([]);
   const [finapse, setFinapseData] = useState([]);
   
   const fetchData = () => {
-    const playerApi = 'https://www.balldontlie.io/api/v1/players/237';
-    const playerPic = 'https://nba-players.herokuapp.com/players/james/lebron';
     const finapseUrl = 'https://finapse-7769f-default-rtdb.firebaseio.com/data.json';
-
-    const getNBAPlayer = axios.get(playerApi)
-    const getPlayerPic = axios.get(playerPic)
     const getFinapseData = axios.get(finapseUrl)
 
-    axios.all([getNBAPlayer, getPlayerPic, getFinapseData]).then(
+    axios.all([getFinapseData]).then(
       axios.spread((...allData) => {
-        const allDataPlayer = allData[0].data.first_name
-        const getNBAPlayerpic = allData[1].config.url
-        const finapseData = allData[2].data
-
-        setPlayerName(allDataPlayer)
-        setPlayerPic(getNBAPlayerpic)
-
+        const finapseData = allData[0].data
         console.log(finapseData)
         setFinapseData(finapseData)
       })
@@ -97,8 +84,11 @@ function App() {
     fetchData()
   }, [])
 
+  const isBackgroundRed = true;
+
   return (
-    <div className="App">
+    <div style={{ backgroundColor: isBackgroundRed ? 'black' : 'blue', }} className="App">
+
       <header className="App-header">
         <img src={finapse_logo} className="App-logo" alt="logo" href />
         {/* 
@@ -106,15 +96,15 @@ function App() {
           <code>finapse.live</code>
         </p>
 
+        */}
         <a
           className="App-link"
-          href="https://twitter.com/FintwitSynapse"
+          href="https://www.buymeacoffee.com/finapse"
           target="_blank"
           rel="noopener noreferrer"
         >
-          coming soon...
+          Support the developer, Buy me a Coffee ☕
         </a>
-         */}
       </header>
 
       {/*
