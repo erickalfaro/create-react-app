@@ -49,8 +49,8 @@ function App() {
       </header>
 
       Player Name is: {playerName}
-      <img src={playerPic}/>
-      <img src={surprisePic}/>
+      <img src={playerPic} alt="playerPic"/>
+      <img src={surprisePic} alt="surprisePic"/>
     </div>
   );
 }
