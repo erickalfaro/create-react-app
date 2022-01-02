@@ -27,9 +27,27 @@ const columns = [
         sortable: true,
         conditionalCellStyles: [
           {
-          	when: row => row.last_15_minute > 1,
+          	when: row => row.last_15_minute > 0 && row.last_15_minute <= 3,
           	style: {
-          		backgroundColor: 'rgba(63, 195, 128, 0.9)',
+          		backgroundColor: 'rgb(249, 228, 200)',
+          		color: 'black',
+          		'&:hover': {
+          			cursor: 'pointer',
+          		},
+          	},
+          },{
+          	when: row => row.last_15_minute > 3 && row.last_15_minute <= 6,
+          	style: {
+          		backgroundColor: 'rgb(255, 130, 67)',
+          		color: 'black',
+          		'&:hover': {
+          			cursor: 'pointer',
+          		},
+          	},
+          },{
+          	when: row => row.last_15_minute > 6,
+          	style: {
+          		backgroundColor: 'rgb(224, 36, 1)',
           		color: 'white',
           		'&:hover': {
           			cursor: 'pointer',
