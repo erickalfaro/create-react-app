@@ -16,7 +16,7 @@ function App() {
           rel="noopener noreferrer"
           
         >
-          more to follow...
+          coming soon...
         </a>
       </header>
     </div>
