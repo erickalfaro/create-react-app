@@ -100,7 +100,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={finapse_logo} className="App-logo" alt="logo" />
+        <img src={finapse_logo} className="App-logo" alt="logo" href />
+        {/* 
         <p>
           <code>finapse.live</code>
         </p>
@@ -113,6 +114,7 @@ function App() {
         >
           coming soon...
         </a>
+         */}
       </header>
 
       {/*
