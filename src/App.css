@@ -15,7 +15,7 @@
   color: white;
 }
 
-a:hover {
+.App-link:hover {
   color: hotpink;
 }
 
@@ -24,6 +24,16 @@ a:hover {
   text-decoration:none;
   display: table-cell;
   vertical-align: middle;
+}
+
+.runtime {
+  text-align: right;
+  vertical-align: right;
+  align-items: right;
+  align-content: right;
+  text-align: right;
+  display: table-cell;
+  display: inline;
 }
 
 .background-red {
