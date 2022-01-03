@@ -20,7 +20,7 @@ const columns = [
         style: {backgroundColor: 'black'}, 
         conditionalCellStyles: [
           {
-          	when: row => row.MarketCap == 'NANO',
+          	when: row => row.MarketCap === 'NANO',
           	style: {
           		color: 'rgb(0, 255, 114)',
           		'&:hover': {
@@ -28,7 +28,7 @@ const columns = [
           		},
           	},
           },{
-          	when: row => row.MarketCap == 'MICRO',
+          	when: row => row.MarketCap === 'MICRO',
           	style: {
           		color: 'rgb(0, 255, 114)',
           		'&:hover': {
@@ -36,7 +36,7 @@ const columns = [
           		},
           	},
           },{
-          	when: row => row.MarketCap == 'SMALL',
+          	when: row => row.MarketCap === 'SMALL',
           	style: {
           		color: 'rgb(255, 242, 0)',
           		'&:hover': {
@@ -44,7 +44,7 @@ const columns = [
           		},
           	},
           },{
-          	when: row => row.MarketCap == 'MID',
+          	when: row => row.MarketCap === 'MID',
           	style: {
           		color: 'rgb(255, 0, 140)',
           		'&:hover': {
@@ -52,7 +52,7 @@ const columns = [
           		},
           	},
           },{
-          	when: row => row.MarketCap == 'LARGE',
+          	when: row => row.MarketCap === 'LARGE',
           	style: {
           		color: 'rgb(0, 13, 255)',
           		'&:hover': {
@@ -60,7 +60,7 @@ const columns = [
           		},
           	},
           },{
-          	when: row => row.MarketCap == 'MEGA',
+          	when: row => row.MarketCap === 'MEGA',
           	style: {
           		color: 'rgb(130, 131, 130)',
           		'&:hover': {
