@@ -312,8 +312,8 @@ function App() {
   const [runtime, setRuntime] = useState([]);
   
   const fetchData = () => {
-    const finapseUrl = process.env.REACT_APP_TRENDING;
-    const runtimeUrl = process.env.REACT_APP_RUNTIME;
+    const finapseUrl = 'https://finapse-7769f-default-rtdb.firebaseio.com/trending.json' //process.env.REACT_APP_TRENDING;
+    const runtimeUrl = 'https://finapse-7769f-default-rtdb.firebaseio.com/runtime.json' //process.env.REACT_APP_RUNTIME;
 
     const getFinapseData = axios.get(finapseUrl)
     const getRuntimeUrl = axios.get(runtimeUrl)
