@@ -11,7 +11,7 @@ const columns = [
 	{
 		name: 'Ticker',
 		selector: row => row.Ticker,
-		cell:(row)=><a className='btns' href="javascript:;" onClick={() => window.open("https://finance.yahoo.com/quote/" + row.Ticker, "_blank")} id={row.Ticker}>{row.Ticker}</a>,
+		cell:(row)=><a className='btns' onClick={() => window.open("https://finance.yahoo.com/quote/" + row.Ticker, "_blank")} id={row.Ticker}>{row.Ticker}</a>,
 		center: true,
 		style: { backgroundColor: 'black' }
 
@@ -375,7 +375,7 @@ function App() {
 
 	useEffect(() => {
 		fetchData()
-		const interval = setInterval(() => {
+		setInterval(() => {
 			fetchData()
 			console.log('hello')
 		}, 1000 * 60 * 5);

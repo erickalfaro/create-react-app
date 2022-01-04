@@ -3,7 +3,6 @@ import finapse_logo from './finapse_logo.png';
 import bitcoin_logo from './bitcoin.png';
 import bmac_logo from './bmac_logo.svg';
 import "./Header.css"
-import SearchIcon from '@material-ui/icons/Search'
 
 function Header() {
     return (
