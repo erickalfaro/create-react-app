@@ -375,10 +375,10 @@ function App() {
 
 	useEffect(() => {
 		fetchData()
-		setInterval(() => {
-			fetchData()
-			console.log('hello')
-		}, 1000 * 60 * 5);
+		//setInterval(() => {
+		//	fetchData()
+		//	console.log('hello')
+		//}, 1000 * 60 * 30);
 	}, [])
 
 	const isBackgroundRed = true;
@@ -396,6 +396,7 @@ function App() {
 					customStyles={customStyles}
 					sortIcon={sortIcon}
 					theme='dark'
+					defaultSortAsc={false}
 					fixedHeader
 					highlightOnHover
 					fixedHeaderScrollHeight="10000px"
