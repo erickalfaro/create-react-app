@@ -2,9 +2,20 @@
   text-align: left;
 }
 
-.App-logo {
-  height: 10vmin;
-  pointer-events: none;
+.btns {
+  color: #61dafb;
+}
+
+.btns:hover{
+  color: hotpink;
+  cursor:pointer;
+}
+
+.dtable {
+  padding-top: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+
 }
 
 .App-header {
@@ -13,17 +24,6 @@
   display: inline;
   font-size: calc(10px + 2vmin);
   color: white;
-}
-
-.App-link:hover {
-  color: hotpink;
-}
-
-.App-link {
-  color: #61dafb;
-  text-decoration:none;
-  display: table-cell;
-  vertical-align: middle;
 }
 
 .runtime {
