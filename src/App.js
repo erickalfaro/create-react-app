@@ -274,7 +274,7 @@ const columns = [
 			}]
 	},
 	{
-		name: 'last 24 Hours',
+		name: 'Last 24 Hours',
 		selector: row => row.last_24_hour,
 		sortable: true,
 		center: true,
@@ -313,14 +313,14 @@ const columns = [
 const customStyles = {
 	header: {
 		style: {
-			minHeight: '20px',
+			minHeight: '30px',
 			backgroundColor: '#202020'
 		},
 	},
 	headRow: {
 		style: {
 			borderTopStyle: 'solid',
-			minHeight: '20px',
+			minHeight: '30px',
 			borderTopWidth: '1px',
 			borderTopColor: defaultThemes.default.divider.default,
 		},
