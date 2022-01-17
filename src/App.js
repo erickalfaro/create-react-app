@@ -6,7 +6,6 @@ import ArrowDownward from '@material-ui/icons/ArrowDownward';
 import { Sparklines, SparklinesBars } from 'react-sparklines';
 import Twitter from './TwitterFeed';
 import { supabase } from './supabase_client'
-import { padding } from '@mui/system';
 
 const sortIcon = <ArrowDownward />;
 
