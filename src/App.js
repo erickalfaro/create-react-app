@@ -114,7 +114,7 @@ function App() {
 		{
 			name: 'Ticker',
 			selector: row => row.Ticker,
-			cell: (row) => <a className='btns' href='/#' onClick={() => handleClick(row.Ticker)} id={row.Ticker}>{row.Ticker}</a>, // window.open("https://finance.yahoo.com/quote/" + row.Ticker, "_blank")
+			cell: (row) => <a className='btns' href='/#' onClick={() => handleClick(row.Ticker)} id={row.Ticker}>{row.Ticker}</a>,
 			center: true,
 			width: '90px',
 			style: { backgroundColor: 'black' }
