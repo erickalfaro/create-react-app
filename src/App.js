@@ -6,6 +6,7 @@ import ArrowDownward from '@material-ui/icons/ArrowDownward';
 import { Sparklines, SparklinesBars } from 'react-sparklines';
 import Twitter from './TwitterFeed';
 import { supabase } from './supabase_client'
+import { padding } from '@mui/system';
 
 const sortIcon = <ArrowDownward />;
 
@@ -105,7 +106,8 @@ function App() {
 			name: '14 Day Trend',
 			center: true,
 			cell: (row) => <Sparklines data={row.frequencies['f']} limit={14} width={500} height={100} margin={5} ><SparklinesBars style={{ fill: "purple" }} /></Sparklines>,
-			width: '150px', // custom width for icon button
+			width: '125px',
+			compact: true,
 			style: {
 				backgroundColor: 'black'
 			},
@@ -115,7 +117,8 @@ function App() {
 			selector: row => row.Ticker,
 			cell: (row) => <a className='btns' href='/#' onClick={() => handleClick(row.Ticker)} id={row.Ticker}>{row.Ticker}</a>,
 			center: true,
-			width: '90px',
+			width: '50px',
+			compact: true,
 			style: { backgroundColor: 'black' }
 
 		},
@@ -123,7 +126,8 @@ function App() {
 			name: 'MarketCap',
 			selector: row => row.MarketCap,
 			center: true,
-			width: '100px',
+			width: '70px',
+			compact: true,
 			style: { backgroundColor: 'black' },
 			conditionalCellStyles: [
 				{
@@ -180,7 +184,8 @@ function App() {
 			name: 'Change (%)',
 			selector: row => row.ChangePct_format,
 			center: true,
-			width: '100px',
+			width: '70px',
+			compact: true,
 			style: { backgroundColor: 'black' },
 			conditionalCellStyles: [
 				{
@@ -208,6 +213,8 @@ function App() {
 			selector: row => row.last_15_minute,
 			sortable: true,
 			center: true,
+			width: '100px',
+			compact: true,
 			style: { backgroundColor: 'black' },
 			conditionalCellStyles: [
 				{
@@ -244,6 +251,8 @@ function App() {
 			selector: row => row.last_30_minute,
 			sortable: true,
 			center: true,
+			width: '100px',
+			compact: true,
 			style: { backgroundColor: 'black' },
 			conditionalCellStyles: [
 				{
@@ -280,6 +289,8 @@ function App() {
 			selector: row => row.last_1_hour,
 			sortable: true,
 			center: true,
+			width: '100px',
+			compact: true,
 			style: { backgroundColor: 'black' },
 			conditionalCellStyles: [
 				{
@@ -316,6 +327,8 @@ function App() {
 			selector: row => row.last_2_hour,
 			sortable: true,
 			center: true,
+			width: '100px',
+			compact: true,
 			style: { backgroundColor: 'black' },
 			conditionalCellStyles: [
 				{
@@ -352,6 +365,8 @@ function App() {
 			selector: row => row.last_6_hour,
 			sortable: true,
 			center: true,
+			width: '100px',
+			compact: true,
 			style: { backgroundColor: 'black' },
 			conditionalCellStyles: [
 				{
@@ -388,6 +403,8 @@ function App() {
 			selector: row => row.last_24_hour,
 			sortable: true,
 			center: true,
+			width: '100px',
+			compact: true,
 			style: { backgroundColor: 'black' },
 			conditionalCellStyles: [
 				{
@@ -439,7 +456,7 @@ function App() {
 						defaultSortFieldId={'last_15_minute'}
 						fixedHeader
 						highlightOnHover
-						fixedHeaderScrollHeight="10000px"
+						fixedHeaderScrollHeight="750px"
 						striped={true}
 						subHeaderWrap={true}
 					/>
@@ -447,9 +464,7 @@ function App() {
 
 				<div className='tweetsEmbed'>
 					<h1 className='tweets_header'>{ticker}</h1>
-
 					<Twitter tweets={tweets} />
-
 				</div>
 			</div>
 

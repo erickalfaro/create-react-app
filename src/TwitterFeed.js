@@ -19,14 +19,14 @@ function Twitter(props) {
                                     <div className='tweetHeader'>
                                         <TwitterIcon />
 
-                                        <a className="screenName" href={'//www.twitter.com/' + t.screen_name}  >
+                                        <a className="screenName" href={'//www.twitter.com/' + t.screen_name} target="_blank" >
                                             @{t.screen_name}
                                         </a>
                                     </div>
                                 </Typography>
 
                                 <Typography variant="body3">
-                                    <a className="tweetText" href={t.url}  >
+                                    <a className="tweetText" href={t.url} target="_blank" >
                                         {t.full_text}
                                     </a>
                                 </Typography>
