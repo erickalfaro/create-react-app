@@ -1,3 +1,8 @@
+.flexbox-container {
+  display: flex;
+  flex-direction: row;
+}
+
 .App {
   text-align: left;
 }
@@ -11,11 +16,33 @@
   cursor:pointer;
 }
 
+.panel {
+  display: flex;
+  flex-direction: row;
+}
+
 .dtable {
+  min-width: 50%;
   padding-top: 10px;
   padding-left: 25px;
-  padding-right: 25px;
+  padding-right: 10px;
 
+}
+
+.tweetsEmbed{
+  margin:4px, 4px;
+  padding:4px;
+  background-color: black;
+  width: 500px;
+  height: 1100px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-right: 25px;
+}
+
+.tweets_header{
+  color: white;
+  border: '1px solid #FFFFFF',
 }
 
 .App-header {
