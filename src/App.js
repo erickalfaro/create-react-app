@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import FirstComponent from './FirstComponent'
 import DataTable, { defaultThemes } from 'react-data-table-component';
 import Header from "./Header"
 import ArrowDownward from '@material-ui/icons/ArrowDownward';
