@@ -1,7 +1,7 @@
 import React from 'react'
-import finapse_logo from './finapse_logo.png';
-import bitcoin_logo from './bitcoin.png';
-import bmac_logo from './bmac_logo.svg';
+import finapse_logo from './assets/finapse_logo.png';
+import bitcoin_logo from './assets/bitcoin.png';
+import bmac_logo from './assets/bmac_logo.svg';
 import "./Header.css"
 
 function Header() {

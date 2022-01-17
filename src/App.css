@@ -19,6 +19,8 @@
 .panel {
   display: flex;
   flex-direction: row;
+  text-align: left;
+  align-content: center;
 }
 
 .dtable {

@@ -1,18 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import './App.css';
 import DataTable, { defaultThemes } from 'react-data-table-component';
 import Header from "./Header"
 import ArrowDownward from '@material-ui/icons/ArrowDownward';
 import { Sparklines, SparklinesBars } from 'react-sparklines';
-import Icon from '@material-ui/icons/Apps';
-import TweetEmbed from 'react-tweet-embed';
 import Twitter from './TwitterFeed';
-import data from "./data";
-import LazyLoad from "react-lazyload";
 import { supabase } from './supabase_client'
-
-//const Twitter = React.lazy(() => import('./TwitterFeed'));
 
 const sortIcon = <ArrowDownward />;
 
@@ -65,36 +58,11 @@ const customStyles = {
 	},
 };
 
-const Post = ({ id, title, body }) => (
-
-	<div className="post">
-		<LazyLoad
-			once={true}
-			placeholder={<img src={`https://picsum.photos/id/${id}/5/5`} alt="..." />}
-		>
-			<div className="post-img">
-				<TweetEmbed id="692527862369357824" options={{ width: '250', theme: 'dark' }} />
-			</div>
-		</LazyLoad>
-		<div className="post-body">
-			<h4>{title}</h4>
-			<p>{body}</p>
-		</div>
-	</div>
-);
-
-
-
 function App() {
-	const [finapse, setFinapseData] = useState([]);
-	const [runtime, setRuntime] = useState([]);
-
 	const [tweets, setTweets] = useState([]);
 	const [trending, setTrending] = useState([]);
 	const [refresh_ts, setRefreshTs] = useState([]);
-
 	const [ticker, setTicker] = useState([]);
-
 
 	async function fetchTweets(ticker) {
 		const { data } = await supabase
@@ -118,26 +86,8 @@ function App() {
 		setRefreshTs(data[0].refresh_ts)
 	}
 
-	const fetchData = () => {
-		const finapseUrl = 'https://finapse-7769f-default-rtdb.firebaseio.com/trending.json' //process.env.REACT_APP_TRENDING;
-		const runtimeUrl = 'https://finapse-7769f-default-rtdb.firebaseio.com/runtime.json' //process.env.REACT_APP_RUNTIME;
-
-		const getFinapseData = axios.get(finapseUrl)
-		const getRuntimeUrl = axios.get(runtimeUrl)
-
-		axios.all([getFinapseData, getRuntimeUrl]).then(
-			axios.spread((...allData) => {
-				const finapseData = allData[0].data
-				const runtimeData = allData[1].data
-				console.log(runtimeData)
-				setFinapseData(finapseData)
-				setRuntime(runtimeData)
-			})
-		)
-	}
 
 	useEffect(() => {
-		fetchData()
 		fetchTweets()
 		fetchTrending()
 		fetchRefresh()
@@ -145,27 +95,11 @@ function App() {
 
 	function handleClick(ticker) {
 		fetchTweets(ticker);
-		setTicker( "Tweets for $" + ticker);
+		setTicker(ticker);
 		console.log(ticker);
 	}
 
-	const [todos, setTodos] = useState([
-		{
-			id: 1,
-			title: 'This is first list'
-		},
-		{
-			id: 2,
-			title: 'This is second list'
-		},
-		{
-			id: 3,
-			title: 'This is third list'
-		},
-	]);
-
 	const isBackgroundRed = true;
-
 	const columns = [
 		{
 			name: '14 Day Trend',
@@ -183,7 +117,7 @@ function App() {
 			center: true,
 			width: '90px',
 			style: { backgroundColor: 'black' }
-	
+
 		},
 		{
 			name: 'MarketCap',
@@ -518,6 +452,7 @@ function App() {
 
 				</div>
 			</div>
+
 		</div >
 	);
 }
