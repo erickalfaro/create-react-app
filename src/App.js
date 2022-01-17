@@ -1,32 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-<<<<<<< HEAD
 import FirstComponent from './FirstComponent'
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          <code>finapse.live</code>
-        </p>
-
-        <FirstComponent displaytext="First Component Data"/>
-
-        <a
-          className="App-link"
-          href="https://twitter.com/FintwitSynapse"
-          target="_blank"
-          rel="noopener noreferrer"
-          
-        >
-          more to follow...
-        </a>
-      </header>
-    </div>
-  );
-=======
 import DataTable, { defaultThemes } from 'react-data-table-component';
 import Header from "./Header"
 import ArrowDownward from '@material-ui/icons/ArrowDownward';
@@ -482,7 +456,6 @@ function App() {
 
 		</div >
 	);
->>>>>>> feature/finapse_alpha
 }
 
 export default App;
