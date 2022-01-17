@@ -1,0 +1,41 @@
+
+.tweet:hover{
+    background-color: #1DA1F2;
+}
+
+.tweetHeader {
+    color: #1DA1F2 ;
+    display: flex;
+    align-items: center;
+}
+
+.screenName {
+    color: white;
+    text-decoration:none;
+    display: table-cell;
+    text-align: left;
+    padding-left: 5px;
+}
+
+.screenName:hover{
+    color: #1DA1F2;
+}
+
+.tweetText {
+    color: white;
+    text-decoration:none;
+    display: table-cell;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.tweetText:hover {
+    color: #1DA1F2;
+}
+
+.timestamp{
+     color: "white"; 
+     display: flex;
+     justify-content: right;
+}

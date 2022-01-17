@@ -1,35 +1,74 @@
+.flexbox-container {
+  display: flex;
+  flex-direction: row;
+}
+
 .App {
-  text-align: center;
+  text-align: left;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.btns {
+  color: #61dafb;
 }
 
+.btns:hover{
+  color: hotpink;
+  cursor:pointer;
+}
 
+.panel {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  align-content: center;
+}
+
+.dtable {
+  min-width: 50%;
+  padding-top: 10px;
+  padding-left: 25px;
+  padding-right: 10px;
+
+}
+
+.tweetsEmbed{
+  margin:4px, 4px;
+  padding:4px;
+  background-color: black;
+  width: 500px;
+  height: 1100px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-right: 25px;
+}
+
+.tweets_header{
+  color: white;
+  border: '1px solid #FFFFFF',
+}
 
 .App-header {
   background-color: #000000;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  min-height: 10vh;
+  display: inline;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-  text-decoration:none
+.runtime {
+  text-align: right;
+  vertical-align: right;
+  align-items: right;
+  align-content: right;
+  text-align: right;
+  display: table-cell;
+  display: inline;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.background-red {
+  background-color: red;
+}
+
+.background-blue {
+  background-color: blue;
 }
