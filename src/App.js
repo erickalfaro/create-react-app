@@ -86,17 +86,20 @@ function App() {
 		setRefreshTs(data[0].refresh_ts)
 	}
 
-
 	useEffect(() => {
-		fetchTweets()
 		fetchTrending()
 		fetchRefresh()
-	}, [])
+		
+		setInterval(() => {
+			fetchTrending()
+			fetchRefresh()
+		}, 60000);
+	  }, []);
+
 
 	function handleClick(ticker) {
 		fetchTweets(ticker);
 		setTicker(ticker);
-		console.log(ticker);
 	}
 
 	const handleKeyDown = (event) => {
@@ -224,7 +227,7 @@ function App() {
 			style: { backgroundColor: 'black' },
 			conditionalCellStyles: [
 				{
-					when: row => row.last_15_minute > 0 && row.last_15_minute <= 2,
+					when: row => row.last_15_minute > 0 && row.last_15_minute <= 1,
 					style: {
 						backgroundColor: 'rgb(249, 228, 200)',
 						color: 'black',
@@ -233,7 +236,7 @@ function App() {
 						},
 					},
 				}, {
-					when: row => row.last_15_minute > 2 && row.last_15_minute <= 5,
+					when: row => row.last_15_minute > 1 && row.last_15_minute <= 4,
 					style: {
 						backgroundColor: 'rgb(255, 130, 67)',
 						color: 'black',
@@ -242,7 +245,7 @@ function App() {
 						},
 					},
 				}, {
-					when: row => row.last_15_minute > 5,
+					when: row => row.last_15_minute > 4,
 					style: {
 						backgroundColor: 'rgb(179, 0, 0)',
 						color: 'white',
@@ -262,7 +265,7 @@ function App() {
 			style: { backgroundColor: 'black' },
 			conditionalCellStyles: [
 				{
-					when: row => row.last_30_minute > 0 && row.last_30_minute <= 2,
+					when: row => row.last_30_minute > 0 && row.last_30_minute <= 1,
 					style: {
 						backgroundColor: 'rgb(249, 228, 200)',
 						color: 'black',
@@ -271,7 +274,7 @@ function App() {
 						},
 					},
 				}, {
-					when: row => row.last_30_minute > 2 && row.last_30_minute <= 5,
+					when: row => row.last_30_minute > 1 && row.last_30_minute <= 5,
 					style: {
 						backgroundColor: 'rgb(255, 130, 67)',
 						color: 'black',
@@ -300,7 +303,7 @@ function App() {
 			style: { backgroundColor: 'black' },
 			conditionalCellStyles: [
 				{
-					when: row => row.last_1_hour > 0 && row.last_1_hour <= 5,
+					when: row => row.last_1_hour > 0 && row.last_1_hour <= 2,
 					style: {
 						backgroundColor: 'rgb(249, 228, 200)',
 						color: 'black',
@@ -309,7 +312,7 @@ function App() {
 						},
 					},
 				}, {
-					when: row => row.last_1_hour > 5 && row.last_1_hour <= 9,
+					when: row => row.last_1_hour > 2 && row.last_1_hour <= 5,
 					style: {
 						backgroundColor: 'rgb(255, 130, 67)',
 						color: 'black',
@@ -318,7 +321,7 @@ function App() {
 						},
 					},
 				}, {
-					when: row => row.last_1_hour > 9,
+					when: row => row.last_1_hour > 5,
 					style: {
 						backgroundColor: 'rgb(179, 0, 0)',
 						color: 'white',
@@ -338,7 +341,7 @@ function App() {
 			style: { backgroundColor: 'black' },
 			conditionalCellStyles: [
 				{
-					when: row => row.last_2_hour > 0 && row.last_2_hour <= 8,
+					when: row => row.last_2_hour > 0 && row.last_2_hour <= 3,
 					style: {
 						backgroundColor: 'rgb(249, 228, 200)',
 						color: 'black',
@@ -347,7 +350,7 @@ function App() {
 						},
 					},
 				}, {
-					when: row => row.last_2_hour > 8 && row.last_2_hour <= 15,
+					when: row => row.last_2_hour > 3 && row.last_2_hour <= 8,
 					style: {
 						backgroundColor: 'rgb(255, 130, 67)',
 						color: 'black',
@@ -356,7 +359,7 @@ function App() {
 						},
 					},
 				}, {
-					when: row => row.last_2_hour > 15,
+					when: row => row.last_2_hour > 8,
 					style: {
 						backgroundColor: 'rgb(179, 0, 0)',
 						color: 'white',
@@ -376,7 +379,7 @@ function App() {
 			style: { backgroundColor: 'black' },
 			conditionalCellStyles: [
 				{
-					when: row => row.last_6_hour > 0 && row.last_6_hour <= 25,
+					when: row => row.last_6_hour > 0 && row.last_6_hour <= 8,
 					style: {
 						backgroundColor: 'rgb(249, 228, 200)',
 						color: 'black',
@@ -385,7 +388,7 @@ function App() {
 						},
 					},
 				}, {
-					when: row => row.last_6_hour > 25 && row.last_6_hour <= 50,
+					when: row => row.last_6_hour > 8 && row.last_6_hour <= 15,
 					style: {
 						backgroundColor: 'rgb(255, 130, 67)',
 						color: 'black',
@@ -394,7 +397,7 @@ function App() {
 						},
 					},
 				}, {
-					when: row => row.last_6_hour > 50,
+					when: row => row.last_6_hour > 15,
 					style: {
 						backgroundColor: 'rgb(179, 0, 0)',
 						color: 'white',
@@ -414,7 +417,7 @@ function App() {
 			style: { backgroundColor: 'black' },
 			conditionalCellStyles: [
 				{
-					when: row => row.last_24_hour > 0 && row.last_24_hour <= 40,
+					when: row => row.last_24_hour > 0 && row.last_24_hour <= 8,
 					style: {
 						backgroundColor: 'rgb(249, 228, 200)',
 						color: 'black',
@@ -423,7 +426,7 @@ function App() {
 						},
 					},
 				}, {
-					when: row => row.last_24_hour > 40 && row.last_24_hour <= 70,
+					when: row => row.last_24_hour > 8 && row.last_24_hour <= 15,
 					style: {
 						backgroundColor: 'rgb(255, 130, 67)',
 						color: 'black',
@@ -432,7 +435,7 @@ function App() {
 						},
 					},
 				}, {
-					when: row => row.last_24_hour > 70,
+					when: row => row.last_24_hour > 15,
 					style: {
 						backgroundColor: 'rgb(179, 0, 0)',
 						color: 'white',
