@@ -1,3 +1,8 @@
+.flexbox-container {
+  display: flex;
+  flex-direction: row;
+}
+
 .App {
   text-align: left;
 }
@@ -11,11 +16,57 @@
   cursor:pointer;
 }
 
+.panel {
+  position:sticky;
+  top: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: top;
+}
+
 .dtable {
+  position: sticky;
+  top: 80px;
+  min-width: 40%;
   padding-top: 10px;
   padding-left: 25px;
-  padding-right: 25px;
+  padding-right: 10px;
 
+}
+
+.tickerSearch{
+  font-size: 30px;
+  color: white;
+  border: '1px solid #FFFFFF';
+  padding: 10px;
+  align-content: center;
+  vertical-align: middle;
+}
+
+.inputBox{
+  width: 300px;
+  font-size: 30px;
+  background-color: #444444;
+  color: white;
+  outline: slategray;
+  border: none;
+}
+
+.tweetsEmbed{
+  margin:4px, 4px;
+  padding:4px;
+  background-color: black;
+  width: 500px;
+  height: 1500px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-right: 25px;
+}
+
+.tweets_header{
+  color: white;
+  border: '1px solid #FFFFFF',
 }
 
 .App-header {
@@ -34,12 +85,4 @@
   text-align: right;
   display: table-cell;
   display: inline;
-}
-
-.background-red {
-  background-color: red;
-}
-
-.background-blue {
-  background-color: blue;
 }
