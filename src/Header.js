@@ -2,6 +2,7 @@ import React from 'react'
 import finapse_logo from './assets/finapse_logo.png';
 import bitcoin_logo from './assets/bitcoin.png';
 import bmac_logo from './assets/bmac_logo.svg';
+import twitter_logo from './assets/twitter.png';
 import "./Header.css"
 
 function Header() {
@@ -26,6 +27,11 @@ function Header() {
                     src={bitcoin_logo}
                     className="bitcoin" alt="logo"
                     onClick={() => window.open("https://strike.me/finapse", "_blank")} />
+
+                <img
+                    src={twitter_logo}
+                    className="twitter_logo" alt="logo"
+                    onClick={() => window.open("https://twitter.com/FintwitSynapse", "_blank")} />
 
 
             </div>
