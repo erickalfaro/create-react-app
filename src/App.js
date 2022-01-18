@@ -99,7 +99,14 @@ function App() {
 		console.log(ticker);
 	}
 
+	const handleKeyDown = (event) => {
+		if (event.key === 'Enter') {
+			handleClick(event.target.value.toUpperCase());
+		}
+	}
+
 	const isBackgroundRed = true;
+
 	const columns = [
 		{
 			name: '14 Day Trend',
@@ -437,6 +444,12 @@ function App() {
 		},
 	];
 
+
+	const onInputChange = (event) => {
+		event.target.value = event.target.value.toUpperCase();
+		setTicker(event.target.value);
+	}
+
 	return (
 		<div style={{ backgroundColor: isBackgroundRed ? 'black' : 'blue', }} className="App">
 			<Header />
@@ -455,14 +468,18 @@ function App() {
 						defaultSortFieldId={'last_15_minute'}
 						fixedHeader
 						highlightOnHover
-						fixedHeaderScrollHeight="750px"
+						fixedHeaderScrollHeight="1500px"
 						striped={true}
 						subHeaderWrap={true}
 					/>
 				</div>
 
 				<div className='tweetsEmbed'>
-					<h1 className='tweets_header'>{ticker}</h1>
+					<div className="tickerSearch">
+						<span>Search: </span>
+						<input className='inputBox' placeholder='Search ticker...' onKeyDown={handleKeyDown} onChange={onInputChange} value={ticker}></input>
+					</div>
+
 					<Twitter tweets={tweets} />
 				</div>
 			</div>
@@ -470,5 +487,5 @@ function App() {
 		</div >
 	);
 }
-
+//<h1 className='tweets_header'>{ticker}</h1>
 export default App;

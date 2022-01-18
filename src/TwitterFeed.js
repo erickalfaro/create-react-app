@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import TwitterIcon from '@mui/icons-material/Twitter';
 
 function Twitter(props) {
+    var Highlight = require('react-highlighter');
     return (
         <div>
             {props.tweets.map(t => { // using props in child component and looping <Button onClick={() => window.open('www.twitter.com/' + t.screen_name, "_blank")} size="small">@{t.screen_name}</Button>
@@ -27,7 +28,7 @@ function Twitter(props) {
 
                                 <Typography variant="body3">
                                     <a className="tweetText" href={t.url} target="_blank" rel="noopener noreferrer" >
-                                        {t.full_text}
+                                    <Highlight search={t.ticker} matchStyle={{backgroundColor: '#1DA1F2'}}>{t.full_text}</Highlight>
                                     </a>
                                 </Typography>
 
